@@ -37,11 +37,13 @@ task :deploy do
 
     # blog
     fork do
+      puts "cloning blog"
       check_destination_blog
     end
 
     # books
     fork do
+      puts "cloning books"
       check_destination_books
     end
 
@@ -60,8 +62,9 @@ task :deploy do
       end
     end
 
+    puts "'mv books programthink/'"
     sh "mv books programthink/"
-    puts "'mv books programthink/' done"
+    puts "done"
 
     sh "ipfs swarm peers"
     ipfs_hash = `ipfs add -r -Q programthink`.match(/\w+/)[0]
