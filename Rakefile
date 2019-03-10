@@ -66,7 +66,7 @@ task :deploy do
     sh "ipfs swarm peers"
     ipfs_hash = `ipfs add -r -Q programthink`.match(/\w+/)[0]
     sh "ipfs pin add -r /ipfs/#{ipfs_hash}"
-    # sh "ipfs name publish --key=key #{ipfs_hash}"
+    sh "ipfs name publish --key=key #{ipfs_hash}"
 
     exit
 
