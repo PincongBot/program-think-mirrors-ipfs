@@ -9,6 +9,7 @@ branches:
   - master
 
 cache:
+  timeout: 30
   bundler: true
   directories:
     - $HOME/.ipfs/
