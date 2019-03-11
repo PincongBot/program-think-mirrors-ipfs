@@ -118,3 +118,21 @@ task :test do
     end
 
 end
+
+task :timing_output do
+
+    i = 0
+
+    while true do
+
+      if i % 30 == 0 then
+        puts ""
+        sh "du -h -s /home/travis/"
+      end
+
+      sleep(1)
+      i += 1
+
+    end
+
+end

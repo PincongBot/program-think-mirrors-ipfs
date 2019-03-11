@@ -23,6 +23,7 @@ before_script:
   - bundle exec rake init --quiet
   - openssl aes-256-cbc -K $encrypted_3321cf161344_key -iv $encrypted_3321cf161344_iv -in key.enc -out ~/.ipfs/keystore/key -d
   - ipfs daemon &
+  - bundle exec rake timing_output --quiet &
 
 script: bundle exec rake deploy --quiet
 
