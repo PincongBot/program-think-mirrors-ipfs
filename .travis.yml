@@ -11,8 +11,6 @@ branches:
 cache:
   timeout: 30
   bundler: true
-  directories:
-    - $HOME/.ipfs/
 
 install:
   - bundle install
