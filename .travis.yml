@@ -14,7 +14,7 @@ cache:
 
 install:
   - bundle install
-  - wget https://dist.ipfs.io/go-ipfs/v0.4.19/go-ipfs_v0.4.19_linux-amd64.tar.gz -O /tmp/ipfs.tar.gz
+  - wget https://dist.ipfs.io/go-ipfs/v0.4.22/go-ipfs_v0.4.22_linux-amd64.tar.gz -O /tmp/ipfs.tar.gz
   - cd /tmp/ && tar -xvf /tmp/ipfs.tar.gz && cd -
   - sudo cp /tmp/go-ipfs/ipfs /usr/local/bin/
 
@@ -24,7 +24,7 @@ before_script:
   - ipfs daemon &
   - bundle exec rake timing_output --quiet &
 
-script: bundle exec rake deploy --quiet
+script: bundle exec rake deploy --quiet || echo
 
 stages:
   - "1"
